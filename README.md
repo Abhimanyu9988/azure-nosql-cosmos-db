@@ -2,21 +2,6 @@
 
 Hello! This repository provides a quick and seamless way to deploy a CosmosDB NoSQL database on Azure using Terraform and Python.
 
-## Directory Structure
-
-NoSQL
-├── README.md
-├── app.py
-├── deploy.sh
-└── Terraform
-├── clean_all.sh
-├── main.tf
-├── run_all.sh
-├── terraform.tfstate (created after running Terraform)
-├── terraform.tfstate.backup (backup, created after running Terraform)
-└── variables.tf
-
-
 ## Prerequisites
 
 - Ensure you have `Terraform` installed.
