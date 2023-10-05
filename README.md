@@ -36,7 +36,9 @@ git clone https://github.com/Abhimanyu9988/azure-nosql-cosmos-db.git
 
 If you wish to clean up the resources created by Terraform, you can use the `clean_all.sh` script present inside the `parent` directory.
 
+```
 ./clean_all.sh
+```
 
 
 ## Note
