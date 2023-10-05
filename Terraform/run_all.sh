@@ -7,7 +7,7 @@ terraform apply -auto-approve
 
 echo -e "${GREEN}${BOLD}Congratulations!!${RESET} Your Terraform is successfully deployed."
 echo -e "${BOLD}Let's deploy the Application now"
-sleep 500
+sleep 300
 # Extract outputs from Terraform
 COSMOS_ENDPOINT=$(terraform output COSMOSDB_ENDPOINT)
 COSMOS_KEY=$(terraform output COSMOSDB_PRIMARY_MASTER_KEY)
