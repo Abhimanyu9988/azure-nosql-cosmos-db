@@ -41,34 +41,6 @@ resource "azurerm_cosmosdb_account" "cosmos-db-account" {
   ]
 }  
 
-
-resource "azurerm_cosmosdb_sql_database" "cosmos-db-database" {
-  name                = var.cosmosdb_nosqldb_name
-  resource_group_name = azurerm_resource_group.cosmos-db-rg.name
-  account_name        = azurerm_cosmosdb_account.cosmos-db-account.name
-  autoscale_settings {
-    max_throughput = 4000
-  }
-}
-
-resource "azurerm_cosmosdb_sql_container" "cosmos-db-nosql-container"{
-  name = var.nosql_container_name 
-  resource_group_name = azurerm_resource_group.cosmos-db-rg.name
-  account_name        = azurerm_cosmosdb_account.cosmos-db-account.name 
-  database_name = azurerm_cosmosdb_sql_database.cosmos-db-database.name
-  partition_key_path    = "/categoryId"
-}
-
-output "DATABASE_NAME" {
-  description = "The name of the CosmosDB SQL Database"
-  value       = azurerm_cosmosdb_sql_database.cosmos-db-database.name
-}
-
-output "CONTAINER_NAME" {
-  description = "The name of the CosmosDB SQL Container"
-  value       = azurerm_cosmosdb_sql_container.cosmos-db-nosql-container.name
-}
-
 output "COSMOSDB_ENDPOINT" {
   description = "The endpoint of the CosmosDB Account"
   value       = azurerm_cosmosdb_account.cosmos-db-account.endpoint

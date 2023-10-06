@@ -12,7 +12,7 @@ username=$(whoami)
 echo -e "${GREEN}Hello $username!!${RESET} We will be deploying a CosmosDB NoSQL database"
 
 # Prompt the user for input
-echo -en "${YELLOW}Proceed? (yes or no) ${RESET}"
+echo -en "${YELLOW}Proceed? (yes(y) or no(n)) ${RESET}"
 
 # Read input with a timeout of 10 seconds
 read -t 10 answer
